@@ -25,7 +25,7 @@ public class SearchPage extends TestBase{
 	@FindBy(xpath="//button[normalize-space()='Send']")
 	WebElement sendmessage;
 	
-// initializing the page objects	
+// initializing the page objects for the web pages	
 	public SearchPage() {
 		PageFactory.initElements(driver, this);
 	}

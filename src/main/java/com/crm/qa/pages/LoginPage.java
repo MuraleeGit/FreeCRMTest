@@ -8,21 +8,15 @@ import com.crm.qa.base.TestBase;
 
 public class LoginPage extends TestBase {
 	
-	@FindBy(name="username")
+	@FindBy(id="session_key")
 	WebElement username;
 	
-	@FindBy(name="password")
+	@FindBy(id="session_password")
 	WebElement password;
 	
-	@FindBy(xpath="//input[@class='btn btn-small']")
+	@FindBy(xpath="//button[normalize-space()='Sign in']")
 	WebElement loginbtn;
 	
-	@FindBy(xpath="//a[@href='https://www.crmpro.com/register/']")
-	WebElement signUpBtn;
-	
-	@FindBy(xpath="//img[@src='https://d3lh3kd7bj2evy.cloudfront.net/img/logo.png']")
-	WebElement crmLogo;
-	//initializing the page objects
 	public LoginPage() {
 		PageFactory.initElements(driver, this);
 		
@@ -32,15 +26,12 @@ public class LoginPage extends TestBase {
 		return driver.getTitle();
 		
 	}
-	public boolean validateCRMImage() {
-		return crmLogo.isDisplayed();
-		
-	}
-	public HomePage login(String un, String pwd) {
+	
+	public SearchPage login(String un, String pwd) {
 		username.sendKeys(un);
 		password.sendKeys(pwd);
 		loginbtn.click();
-		return new HomePage();
+		return new SearchPage();
 	}
 
 }

@@ -20,7 +20,7 @@ public class TestBase {
 	protected TestBase() {
 		try {
 			prop = new Properties();
-			FileInputStream ip=new FileInputStream("C:/Users/hp/eclipse-workspace/FreeCRMTest/src/main/java/com/crm/qa/config/config.properties");
+			FileInputStream ip=new FileInputStream("C:/Users/hp/eclipse-workspace/LinkedInSendingMessage/src/main/java/com/crm/qa/config/config.properties");
 			prop.load(ip);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -33,10 +33,10 @@ public class TestBase {
 	public static void initialization() {
 		String BrowserName=prop.getProperty("browser");
 		if(BrowserName.equals("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "D:\\seleniumtrainingbyJitendra\\downloads\\java11\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "D:\\seleniumtrainingbyMuralee\\downloads\\java11\\chromedriver.exe");
 			driver=new ChromeDriver();
 		}else if(BrowserName.equals("FF")) {
-			System.setProperty("webdriver.gecko.driver", "D:\\seleniumtrainingbyJitendra\\downloads\\java11\\geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver", "D:\\seleniumtrainingbyMuralee\\downloads\\java11\\geckodriver.exe");
 			driver=new FirefoxDriver();
 		}
 		driver.manage().window().maximize();
